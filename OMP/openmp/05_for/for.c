@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
 	double result = 0.0;
 
 	double t1 = omp_get_wtime();
-/*code missing here*/
+	#pragma omp parallel for
 	for (int i = 0; i < dimension; i++)
 	{
 		result += do_some_computation(i);
