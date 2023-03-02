@@ -10,7 +10,7 @@ int main(int argc,char* argv[]){
 	MPI_Comm_size(MPI_COMM_WORLD,&procCount);
 	MPI_Comm_rank(MPI_COMM_WORLD,&procRank);
 
-	int length = 0,receiveId,sendId,tagMessage = 1;
+	int length = 1,receiveId,sendId,tagMessage = 1;
 	int message = procRank + 60;
 
 	sendId = procRank == (procCount - 1)?0:procRank+1;
