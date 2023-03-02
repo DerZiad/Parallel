@@ -24,7 +24,7 @@ int main(int argc,char* argv[]){
 	int buf[9];
 
 	if(procRank == 0){
-		fill(table,length);
+		fill(buf,length);
 		MPI_Bcast(buf,length,MPI_INT,0,MPI_COMM_WORLD);
 	}else{
 		printf("Process %d : ",procRank);
