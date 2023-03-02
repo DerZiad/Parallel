@@ -23,7 +23,7 @@ int main(int argc,char* argv[]){
 			
 	int* message2 = (int*)malloc(sizeof(int));
 	MPI_Recv(message2,length,MPI_INT,receiveId,tagMessage,MPI_COMM_WORLD,&status);
-	printf("[ + ] - Message with value %d received from %d",*message2,receiveId);
+	printf("[ + ] - Message with value %d received from %d\n",*message2,receiveId);
 	
 	return 0;
 }
