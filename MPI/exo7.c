@@ -8,6 +8,12 @@ void printTable(int *table,int n){
 	}
 }
 
+void fill(int *table,int length){
+	for(int i =0 ;i<length;i++){
+		table[i] = i + 1;
+	}
+}
+
 int main(int argc,char* argv[]){
 	int procCount,procRank,length=9;
 
@@ -18,7 +24,7 @@ int main(int argc,char* argv[]){
 	int buf[9];
 
 	if(procRank == 0){
-		buf = {1,2,3,4,5,6,7,8,9};
+		fill(table,length);
 		MPI_Bcast(buf,length,MPI_INT,0,MPI_COMM_WORLD);
 	}else{
 		printf("Process %d : ",procRank);
