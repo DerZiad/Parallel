@@ -25,9 +25,9 @@ int main(int argc,char* argv[]){
 
 			MPI_Get_count(&status,MPI_CHAR,&k);
 
-			char* message = (char*)malloc(k * sizeof(char));
-			MPI_Recv(message,k,MPI_CHAR,1,1,MPI_COMM_WORLD,&status);
-			printf("%s",message);
+			char* message2 = (char*)malloc(k * sizeof(char));
+			MPI_Recv(message2,k,MPI_CHAR,1,1,MPI_COMM_WORLD,&status);
+			printf("%s",message2);
 		}
 		else{
 			MPI_Status status;
