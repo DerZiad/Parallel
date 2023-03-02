@@ -21,9 +21,9 @@ int main(int argc,char* argv[]){
 			
 	MPI_Status status;
 			
-	int* message2 = (int*)malloc(sizeof(int));
+	int message2;
 	MPI_Recv(message2,length,MPI_INT,receiveId,tagMessage,MPI_COMM_WORLD,&status);
-	printf("[ + ] - Message with value %d received from %d\n",message2,receiveId);
+	printf("[ + ] - Thread %d => Message with value %d received from %d\n",procRank,message2,receiveId);
 	
 	return 0;
 }
