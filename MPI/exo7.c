@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "mpi.h"
 
-void printTable(int *table,int n){
+void printTable(int* table,int n){
 	for(int i =0;i<n;i++){
 		printf("%d",table[i]);
 	}
@@ -21,7 +21,7 @@ int main(int argc,char* argv[]){
 	MPI_Comm_size(MPI_COMM_WORLD,&procCount);
 	MPI_Comm_rank(MPI_COMM_WORLD,&procRank);
 	
-	int buf[9];
+	int buf[length];
 
 	if(procRank == 0){
 		fill(buf,length);
