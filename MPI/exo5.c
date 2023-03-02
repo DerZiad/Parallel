@@ -17,7 +17,7 @@ int main(int argc,char* argv[]){
 
 	MPI_Send(&message,length,MPI_INT,sendId,tagMessage,MPI_COMM_WORLD);
 		
-	int receiveId = procRank == 0? (procCount - 1) : procRank-1;
+	receiveId = procRank == 0? (procCount - 1) : procRank-1;
 			
 	MPI_Status status;
 			
