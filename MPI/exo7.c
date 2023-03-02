@@ -35,7 +35,7 @@ int main(int argc,char* argv[]){
 	}
 
 	
-	MPI_Bcast(buf,length,MPI_INT,0,MPI_COMM_WORLD);
+	MPI_Bcast(&buf,length,MPI_INT,0,MPI_COMM_WORLD);
 
 	MPI_Finalize();
 	return 0;
