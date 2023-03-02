@@ -10,12 +10,12 @@ int main(int argc,char* argv[]){
 	MPI_Comm_size(MPI_COMM_WORLD,&procCount);
 	MPI_Comm_rank(MPI_COMM_WORLD,&procRank);
 
-	int length = 6;
+	int length = 5;
 
 	for(int i = 0;i<6;i++){
 
 		if( 0 == procRank){
-			char message[] = "Ping\n";
+			char message[] = "Ping";
 			MPI_Send(&message,length,MPI_CHAR,1,1,MPI_COMM_WORLD);
 			
 			MPI_Status status;
@@ -27,7 +27,7 @@ int main(int argc,char* argv[]){
 
 			char* message2 = (char*)malloc(k * sizeof(char));
 			MPI_Recv(message2,k,MPI_CHAR,1,1,MPI_COMM_WORLD,&status);
-			printf("%s",message2);
+			printf("%s frm thread %d\n",message2,1);
 		}
 		else{
 			MPI_Status status;
@@ -39,7 +39,7 @@ int main(int argc,char* argv[]){
 			char* message = (char*)malloc(k * sizeof(char));
 
 			MPI_Recv(message,k,MPI_CHAR,0,1,MPI_COMM_WORLD,&status);
-			printf("%s",message);
+			printf("%s frm thread %d\n",message,0);
 
 			char message1[] = "Pong";
 			
