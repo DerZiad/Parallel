@@ -4,7 +4,7 @@
 
 void printTable(int *table,int n){
 	for(int i =0;i<n;i++){
-		printf("%d",*(table + i));
+		printf("%d",table[i]);
 	}
 }
 
@@ -29,6 +29,7 @@ int main(int argc,char* argv[]){
 	}else{
 		printf("Process %d : ",procRank);
 		printTable(buf,length);
+		printf("\n");
 	}
 
 	
