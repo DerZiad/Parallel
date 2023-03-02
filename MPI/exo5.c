@@ -13,11 +13,11 @@ int main(int argc,char* argv[]){
 	int length = 0,receiveId,sendId,tagMessage = 1;
 	int message = procRank + 60;
 
-	sendId = procRank == (procCount - 1)?0:i+1;
+	sendId = procRank == (procCount - 1)?0:procRank+1;
 
 	MPI_Send(&message,length,MPI_INT,sendId,tagMessage,MPI_COMM_WORLD);
 		
-	int receiveId = procRank == 0? (procCount - 1) : i-1;
+	int receiveId = procRank == 0? (procCount - 1) : procRank-1;
 			
 	MPI_Status status;
 			
