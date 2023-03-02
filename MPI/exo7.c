@@ -4,7 +4,7 @@
 
 void printTable(int* table,int n){
 	for(int i =0;i<n;i++){
-		printf("%d",table[i]);
+		printf("%d ",table[i]);
 	}
 }
 
@@ -25,6 +25,9 @@ int main(int argc,char* argv[]){
 
 	if(procRank == 0){
 		fill(buf,length);
+		printf("Root Value ");
+		printTable(buf,length);
+		printf("\n");
 		MPI_Bcast(buf,length,MPI_INT,0,MPI_COMM_WORLD);
 	}else{
 		printf("Process %d : ",procRank);
