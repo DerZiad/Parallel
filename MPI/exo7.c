@@ -25,17 +25,14 @@ int main(int argc,char* argv[]){
 
 	if(procRank == 0){
 		fill(buf,length);
-		printf("Root Value ");
-		printTable(buf,length);
-		printf("\n");
-	}else{
-		printf("Process %d : ",procRank);
-		printTable(buf,length);
-		printf("\n");
 	}
-
 	
-	MPI_Bcast(&buf,length,MPI_INT,0,MPI_COMM_WORLD);
+	MPI_Bcast(&buf,length, MPI_INT,0,MPI_COMM_WORLD);
+
+
+	printf("Process %d : ",procRank);
+	printTable(buf,length);
+	printf("\n");
 
 	MPI_Finalize();
 	return 0;
