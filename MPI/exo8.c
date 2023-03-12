@@ -10,9 +10,8 @@ int main(int argc,char* argv[]){
 	MPI_Comm_size(MPI_COMM_WORLD,&procSize);
 	MPI_Comm_rank(MPI_COMM_WORLD,&procRank);
 	
-	printf("Put array :");
-
-	if(procRank == 0){
+	if(0==procRank){
+		printf("Put array :");
 		int length=6;
 		int buf[length];
 		for(int i = 0;i<length;i++){
