@@ -16,7 +16,7 @@ int main(int argc,char* argv[]){
 		int length=6;
 		int buf[length]
 		for(int i = 0;i<length;i++){
-			scanf("%d",buf + i);
+			scanf("%d",&buf[i]);
 		}
 	
 	
