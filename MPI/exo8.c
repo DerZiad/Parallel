@@ -15,7 +15,9 @@ int main(int argc,char* argv[]){
 	if(procRank == 0){
 		int length=6;
 		int buf[length]
-		scanf("%d %d %d %d %d %d",buf,buf + 1,buf +2 , buf + 3, buf + 4,buf + 5);
+		for(int i = 0;i<length;i++){
+			scanf("%d",buf + i);
+		}
 	
 	
 		MPI_Send(&buf,length, MPI_INT, 1, MPI_ANY_TAG,MPI_COMM_WORLD);
