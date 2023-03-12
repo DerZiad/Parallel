@@ -14,7 +14,7 @@ int main(int argc,char* argv[]){
 
 	if(procRank == 0){
 		int length=6;
-		int buf[length]
+		int buf[length];
 		for(int i = 0;i<length;i++){
 			scanf("%d",&buf[i]);
 		}
