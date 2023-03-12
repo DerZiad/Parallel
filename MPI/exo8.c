@@ -19,11 +19,11 @@ int main(int argc,char* argv[]){
 		}
 	
 	
-		MPI_Send(&buf,length, MPI_INT, 1, MPI_ANY_TAG,MPI_COMM_WORLD);
+		MPI_Send(&buf,length, MPI_INT, 1, 1,MPI_COMM_WORLD);
 	}else{
 		MPI_Status status2;
 
-		MPI_Probe(0,MPI_ANY_TAG,MPI_COMM_WORLD,&status2);
+		MPI_Probe(0,1,MPI_COMM_WORLD,&status2);
 		int count = 0;
 
 		MPI_Status status;
@@ -33,7 +33,7 @@ int main(int argc,char* argv[]){
 
 		MPI_Status status1;
 		int buf[count];
-		MPI_Recv(&buf,count,MPI_INT,0,MPI_ANY_TAG,MPI_COMM_WORLD,&status1);
+		MPI_Recv(&buf,count,MPI_INT,0,1,MPI_COMM_WORLD,&status1);
 
 		int countZeros = 0;
 
