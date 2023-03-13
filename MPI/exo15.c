@@ -27,6 +27,9 @@ int main(int argc,char* argv[]){
 		while(1){
 			counter++;
 			MPI_Test(&request,&flag,MPI_STATUS_IGNORE);
+
+			if(flag == 1)
+				break;
 		}
 
 		printf("I waited for %d for the message and his value is %d",counter,message);
