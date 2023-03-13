@@ -18,17 +18,13 @@ int main(int argc,char* argv[]){
 			scanf("%d",&buf[i]);
 		}
 	
-		printf("Sending");
 		MPI_Send(&buf,length, MPI_INT, 1, 1,MPI_COMM_WORLD);
-		printf("Done sending");
 	}else{
-		MPI_Status status2;
+		MPI_Status status;
 
-		MPI_Probe(0,1,MPI_COMM_WORLD,&status2);
+		MPI_Probe(0,1,MPI_COMM_WORLD,&status);
 		int count;
 
-
-		MPI_Status status;
 
 		MPI_Get_count(&status,MPI_INT,&count);
 		printf("%d",count);
