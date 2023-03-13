@@ -24,7 +24,8 @@ int main(int argc,char* argv[]){
 		MPI_Status status2;
 
 		MPI_Probe(0,1,MPI_COMM_WORLD,&status2);
-		int count = 0;
+		int count;
+
 
 		MPI_Status status;
 
