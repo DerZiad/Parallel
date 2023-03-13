@@ -17,9 +17,8 @@ int main(int argc,char* argv[]){
 		printf("Sending good \n");
 	}else{
 		int message;
-		MPI_Request* request;
-		MPI_Status* status;
-		MPI_Irecv(&message,1,MPI_INT,0,1,MPI_COMM_WORLD,request);
+		MPI_Request request;
+		MPI_Irecv(&message,1,MPI_INT,0,1,MPI_COMM_WORLD,&request);
 
 
 		int flag = 0;
@@ -27,7 +26,7 @@ int main(int argc,char* argv[]){
 
 		while(1){
 			counter++;
-			MPI_Test(request,&flag,MPI_STATUS_IGNORE);
+			MPI_Test(&request,&flag,MPI_STATUS_IGNORE);
 		}
 
 		printf("I waited for %d for the message and his value is %d",counter,message);
