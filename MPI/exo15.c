@@ -14,6 +14,7 @@ int main(int argc,char* argv[]){
 		int message = 42;
 		MPI_Request* request;
 		MPI_Isend(&message,1,MPI_INT,1,1,MPI_COMM_WORLD,request);
+		printf("Sending good \n");
 	}else{
 		int message;
 		MPI_Request* request;
