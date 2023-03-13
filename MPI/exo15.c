@@ -12,12 +12,12 @@ int main(int argc,char* argv[]){
 
 	if(0 == procRank){
 		int message = 42;
-		MPI_Request request*;
+		MPI_Request* request;
 		MPI_Isend(&message,1,MPI_INT,1,1,MPI_COMM_WORLD,request);
 	}else{
 		int message;
-		MPI_Request request*;
-		MPI_Status status*;
+		MPI_Request* request;
+		MPI_Status* status;
 		MPI_Irecv(&message,1,MPI_INT,0,1,MPI_COMM_WORLD,request);
 
 
