@@ -20,7 +20,7 @@ int main(int argc,char* argv[]){
 	
 		printf("Sending");
 		MPI_Send(&buf,length, MPI_INT, 1, 1,MPI_COMM_WORLD);
-		printf("Done sending")
+		printf("Done sending");
 	}else{
 		MPI_Status status2;
 
