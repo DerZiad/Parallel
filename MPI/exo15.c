@@ -7,8 +7,8 @@ int main(int argc,char* argv[]){
 	int procRank,procSize;
 
 	MPI_Init(&argc,&argv);
-	MPI_Comm_size(MPI_COMM_WORLD,procSize);
-	MPI_Comm_rank(MPI_COMM_WORLD,procRank);
+	MPI_Comm_size(MPI_COMM_WORLD,&procSize);
+	MPI_Comm_rank(MPI_COMM_WORLD,&procRank);
 
 	if(0 == procRank){
 		int message = 42;
