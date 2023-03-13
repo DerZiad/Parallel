@@ -27,7 +27,6 @@ int main(int argc,char* argv[]){
 
 
 		MPI_Get_count(&status,MPI_INT,&count);
-		printf("%d",count);
 
 		MPI_Status status1;
 		int buf[count];
